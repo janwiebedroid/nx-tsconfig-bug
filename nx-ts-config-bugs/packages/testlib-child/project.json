@@ -1,0 +1,26 @@
+{
+  "name": "testlib-child",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/testlib-child/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/testlib-child",
+        "main": "packages/testlib-child/src/index.ts",
+        "tsConfig": "packages/testlib-child/tsconfig.lib.json",
+        "assets": ["packages/testlib-child/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/testlib-child/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}

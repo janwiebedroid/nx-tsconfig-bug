@@ -1,0 +1,26 @@
+{
+  "name": "testlib-with-deps",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/testlib-with-deps/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/packages/testlib-with-deps",
+        "main": "packages/testlib-with-deps/src/index.ts",
+        "tsConfig": "packages/testlib-with-deps/tsconfig.lib.json",
+        "assets": ["packages/testlib-with-deps/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["packages/testlib-with-deps/**/*.ts"]
+      }
+    }
+  },
+  "tags": []
+}
